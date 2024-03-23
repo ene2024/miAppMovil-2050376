@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,41 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor() {
+    console.log("AppComponent: Constructor");
+  }
+
+  ngOnChanges(){
+    console.log("AppComponente: OnChanges");
+  }
+
+  ngOnInit(){
+    console.log("AppComponent: OnInit");
+  }
+
+  ngDoCheck(){
+    console.log("AppComponent: DoCheck");
+  }
+
+  ngAfterContentInit(){
+    console.log("AppComponent: AfterContentInit");
+  }
+
+  ngAfterContentChecked(){
+    console.log("AppComponent: AfterContentChecked");
+  }
+
+  ngAfterViewInit(){
+    console.log("AppComponent: AfterViewInit");
+  }
+
+  ngAfterViewChecked(){
+    console.log("AppComponent: AfterViewChecked")
+  }
+
+  ngOnDestroy(){
+    console.log("AppComponent : OnDestroy");
+  }
 
   titulo: string = "Mi-App-Movil"
 
@@ -40,4 +75,5 @@ export class HomePage {
     
     ];
 
+   
 }
