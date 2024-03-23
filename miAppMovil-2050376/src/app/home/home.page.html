@@ -12,17 +12,35 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card *ngFor="let tarjeta of tarjetas">
+    <ion-card-header>
+     <ion-card-title>{{tarjeta.numero}}</ion-card-title>
+     <ion-card-subtitle>{{tarjeta.nombre}}</ion-card-subtitle>
+   </ion-card-header>
+ 
+   <ion-card-content>
+     <span>Vigencia:</span>
+     <strong>{{tarjeta.vigenciaInicio}}/{{tarjeta.vigenciaFin}}</strong>
+     <span>CVV: <strong>***</strong></span>
+ 
+ 
+ 
+   </ion-card-content>
+ 
+ 
+   </ion-card>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <div id="container">
+    <!-- Contenido de tu página -->
+    <ion-button (click)="hazmeClic()">Hazme Clic</ion-button> <br>
+    <img [src]="imgUrl">
 
- <div id="container">
- <!--   <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  --> 
-  <ion-button (click)="hazmeClic()">Hazme Clic</ion-button> <br>
-  <img [src]="imgUrl">
+    <p>Insertar nombre: </p>
+    <ion-input [(ngModel)]="nombreAlumno"></ion-input>
+    <ion-label>El alumno se llama: {{nombreAlumno}}</ion-label>
 
-  <p>Insertar nombre: </p>
-  <ion-input [(ngModel)]="nombreAlumno"></ion-input>
-  <ion-label>El alumno se llama: {{nombreAlumno}}</ion-label>
+    <p *ngIf="verdadero">Si ves este mensaje, <strong>verdadero</strong> = true</p>
   </div>
 
+  
 </ion-content>

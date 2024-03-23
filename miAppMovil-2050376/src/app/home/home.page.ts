@@ -19,4 +19,25 @@ export class HomePage {
 
 
   nombreAlumno : string =' ';
+
+  verdadero : boolean = true;
+  tarjetas = [
+    {
+      nombre: "Arturo",
+      numero: "8181818181818181",
+      vigenciaInicio: "08",
+      vigenciaFin: "27",
+      CVV: "088"
+    },
+    {
+      nombre: "Jared",
+      numero: "8181818181818181",
+      vigenciaInicio: "10",
+      vigenciaFin: "27",
+      CVV: "008"
+    }
+    
+    
+    ];
+
 }
