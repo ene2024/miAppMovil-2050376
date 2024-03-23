@@ -19,5 +19,10 @@
   --> 
   <ion-button (click)="hazmeClic()">Hazme Clic</ion-button> <br>
   <img [src]="imgUrl">
+
+  <p>Insertar nombre: </p>
+  <ion-input [(ngModel)]="nombreAlumno"></ion-input>
+  <ion-label>El alumno se llama: {{nombreAlumno}}</ion-label>
   </div>
+
 </ion-content>
