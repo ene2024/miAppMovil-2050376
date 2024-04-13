@@ -1,0 +1,21 @@
+<ion-content>
+
+
+  <div class="list">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title class="title">Mi App de Tareas</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <div *ngFor="let tarea of tareas">
+      <ion-card-content class="container">
+        <ion-card-title>{{tarea.titulo}}</ion-card-title>
+        <div class="fecha">
+          <span><strong>Fecha</strong> {{tarea.fecha}}</span>
+        </div>
+        <ion-button class="details-button" expand="full">+ Ver más detalles</ion-button>
+      </ion-card-content>
+    </div>
+    <ion-fab-button>+</ion-fab-button>
+  </div>
+</ion-content>
