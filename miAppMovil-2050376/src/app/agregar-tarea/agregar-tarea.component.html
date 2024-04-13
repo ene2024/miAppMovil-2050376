@@ -1,3 +1,66 @@
-<p>
-  agregar-tarea works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="centered-title">
+      Agregar tarea
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<hr class="separacion">
+<ion-content>
+  <ion-list>
+
+    <ion-item>
+      <ion-label position="floating" >Nombre de la tarea</ion-label>
+      <br>
+      <ion-input type="text" class="nombreTarea"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Fecha en que se completará</ion-label>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Mes</ion-label>
+            <ion-select>
+              <ion-select-option value="1">Enero</ion-select-option>
+              <ion-select-option value="2">Febrero</ion-select-option>
+              <ion-select-option value="3">Marzo</ion-select-option>
+              <ion-select-option value="4">Abril</ion-select-option>
+              <ion-select-option value="5">Mayo</ion-select-option>
+              <ion-select-option value="6">Junio</ion-select-option>
+              <ion-select-option value="7">Julio</ion-select-option>
+              <ion-select-option value="8">Agosto</ion-select-option>
+              <ion-select-option value="9">Septiembre</ion-select-option>
+              <ion-select-option value="10">Octubre</ion-select-option>
+              <ion-select-option value="11">Noviembre</ion-select-option>
+              <ion-select-option value="12">Diciembre</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <div>
+          <ion-item>
+            <ion-label position="floating">Anio</ion-label>
+            <ion-select>
+              
+              <ion-select-option value="2024">2024</ion-select-option>
+              <ion-select-option value="2025">2025</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea rows="5"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+  <!-- Botón para agregar la tarea -->
+  <ion-button expand="block" class="buttonA">Agregar</ion-button>
+
+</ion-content>

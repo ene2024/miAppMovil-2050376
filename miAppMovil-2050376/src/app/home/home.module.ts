@@ -7,6 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { MiComponenteComponent } from '../mi-componente/mi-componente.component'; 
 import { TareasComponent } from '../tareas/tareas.component'; 
+import { AgregarTareaComponent } from '../agregar-tarea/agregar-tarea.component'; 
 
 
 
@@ -17,6 +18,6 @@ import { TareasComponent } from '../tareas/tareas.component';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, MiComponenteComponent, TareasComponent]
+  declarations: [HomePage, MiComponenteComponent, TareasComponent, AgregarTareaComponent ]
 })
 export class HomePageModule {}
