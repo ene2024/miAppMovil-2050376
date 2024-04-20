@@ -11,17 +11,16 @@
 
     <ion-item>
       <ion-label position="floating" >Nombre de la tarea</ion-label>
-      <br>
-      <ion-input type="text" class="nombreTarea"></ion-input>
+      <ion-input type="text" [(ngModel)]="nombreTarea"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Fecha en que se completará</ion-label>
       <ion-row>
-        <ion-col>
+        <ion-col size="6">
           <ion-item>
             <ion-label position="floating">Mes</ion-label>
-            <ion-select>
+            <ion-select [(ngModel)]="mesTarea">
               <ion-select-option value="1">Enero</ion-select-option>
               <ion-select-option value="2">Febrero</ion-select-option>
               <ion-select-option value="3">Marzo</ion-select-option>
@@ -37,30 +36,27 @@
             </ion-select>
           </ion-item>
         </ion-col>
-        <ion-col>
-          <div>
+        <ion-col size="6">
           <ion-item>
-            <ion-label position="floating">Anio</ion-label>
-            <ion-select>
-              
+            <ion-label position="floating">Año</ion-label>
+            <ion-select [(ngModel)]="anioTarea">
               <ion-select-option value="2024">2024</ion-select-option>
-              <ion-select-option value="2025">2025</ion-select-option>
+             <ion-select-option value="2025">2025</ion-select-option>
+             <ion-select-option value="2026">2026</ion-select-option>
             </ion-select>
           </ion-item>
-        </div>
         </ion-col>
       </ion-row>
     </ion-item>
 
-    
     <ion-item>
       <ion-label position="floating">Descripción</ion-label>
-      <ion-textarea rows="5"></ion-textarea>
+      <ion-textarea rows="5" [(ngModel)]="descripcionTarea"></ion-textarea>
     </ion-item>
 
   </ion-list>
 
   <!-- Botón para agregar la tarea -->
-  <ion-button expand="block" class="buttonA">Agregar</ion-button>
+  <ion-button expand="block" class="buttonA" (click)="agregarTarea(nombreTarea, mesTarea, anioTarea, descripcionTarea)">Agregar</ion-button>
 
 </ion-content>

@@ -1,36 +1,36 @@
-/* Estilo para el campo de entrada de Nombre de la Tarea */
-ion-input.nombreTarea {
-    border: 1px solid black; /* Borde negro */
-    border-radius: 5px; /* Bordes redondeados */
-    padding: 10px; /* Espaciado interno */
-    width: calc(100% - 20px); /* Ancho del campo con margen interno */
-    margin: 10px; /* Margen exterior */
-    height: 200px; /* Altura deseada para la caja de entrada de texto */
-  }
-
-.separacion{
-border-top: 1px solid black; /* Línea horizontal sólida de color negro */
-  margin-top: 20px; /* Margen superior para separarla del elemento anterior */
-  margin-bottom: 20px; /* Margen inferior para separarla del siguiente elemento */
-  }
-
-.buttonA{
-    width: 
-    292.04px;
-    height: 67.7px;
-    margin: auto;
-    background-color: #4FFFDF;
-    border-radius: 10px;
-    color: black;
-    border: 5px dotted black;
+ion-header{
+  background-color: transparent;
+  height: 6vh;
 }
 
-.centered-form {
-    display: flex;
-    justify-content: center;
+ion-title{
+  text-align-last: center;
+  font-size: 3vh;
 }
 
-.centered-title {
-    text-align: center;
-    font-weight: bold;
+ion-button{
+  display: block;
+  --background: rgba(0, 0, 0);
+  --border-radius:10px;
+  --border-color:white;
+  width: 100vw;
+  height: 6vh;
+  margin-top: 3vh;
+  font-size: 3vh;
 }
+
+ion-fab-button {
+  --background: rgb(71, 71, 71);
+  --border-radius: 10px;
+  --color: black;
+  margin-bottom: 5vh;
+  margin-left: 5vw;
+  height: 10vh;
+  width: 10vh;
+}
+
+h2{
+  font-size: 2.5vh;
+  margin-left: 1vw;
+} 
+
