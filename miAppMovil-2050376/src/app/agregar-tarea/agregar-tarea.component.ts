@@ -9,25 +9,33 @@ import { Router } from '@angular/router';
 })
 export class AgregarTareaComponent {
   nombreTarea: string = '';
-  mesTarea: number = 1; // Inicializado a 1 por ejemplo
-  anioTarea: number = 2024; // Inicializado a 2024 por ejemplo
+  mesTarea: number = 1; 
+  anioTarea: number = 2024; 
   descripcionTarea: string = '';
 
   constructor(private tareaService: TareaService, private router: Router) { }
 
   agregarTarea(nombre: string, mes: number, anio: number, descripcion: string) {
+  
+    const fechaFormateada = `${anio}-${mes.toString().padStart(2, '0')}`;
+
+   
     const nuevaTarea = {
       id: Math.floor(Math.random() * 1000),
       nombre: this.nombreTarea,
-      fecha: new Date(this.anioTarea, this.mesTarea - 1),
+      fecha: fechaFormateada, 
       descripcion: this.descripcionTarea
     };
+
+
     this.tareaService.agregarTarea(nuevaTarea);
+
     this.nombreTarea = '';
     this.mesTarea = 1; 
     this.anioTarea = 2024;
     this.descripcionTarea = '';
+
+   
     this.router.navigateByUrl('/tareas');
   }
- 
 }

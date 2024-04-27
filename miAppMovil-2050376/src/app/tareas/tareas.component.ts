@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
 import { TareaService } from '../tarea.service';
 import { Tarea } from '../tarea.model';
+import { IonAccordionGroup } from '@ionic/angular';
 
 @Component({
   selector: 'app-tareas',
@@ -14,13 +15,17 @@ export class TareasComponent implements OnInit {
 
   ngOnInit() {
     this.actualizarTareas();
+    mostrarDescripcion: false 
   }
+  @ViewChild('accordionGroup', { static: true })
+  accordionGroup!: IonAccordionGroup;
+
 
   private actualizarTareas(): void {
     this.tareas = this.tareaService.getTareas();
   }
 
-  agregarTarea(nombre: string, fecha: Date): void {
+  agregarTarea(nombre: string, fecha: string): void {
     const nuevaTarea: Tarea = {
       id: this.tareas.length + 1,
       nombre: nombre,
@@ -30,4 +35,21 @@ export class TareasComponent implements OnInit {
     this.tareaService.agregarTarea(nuevaTarea);
     this.actualizarTareas();
   }
+  toggleAccordion = () => {
+    const nativeEl = this.accordionGroup;
+    if (nativeEl.value === 'second') {
+      nativeEl.value = undefined;
+    } else {
+      nativeEl.value = 'second';
+    }
+  };
+  eliminarTarea(tarea: any) {
+  
+    const index = this.tareas.indexOf(tarea);
+    if (index !== -1) {
+    
+      this.tareas.splice(index, 1);
+    }
+  }
+
 }

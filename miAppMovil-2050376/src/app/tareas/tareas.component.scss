@@ -39,8 +39,8 @@
  }
 
  .details-button {
-    background: #727171 !important;  /* Cambia el color de fondo del botón */
-    color: white; /* Cambia el color del texto del botón */
+    background: #727171 !important;  
+    color: white; 
     font-weight: bolder;
     font-size: 18px;
     text-align: left;
@@ -64,3 +64,9 @@
     color: black;
     background:#4FFFDF;
  }
+
+ .eliminar-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
