@@ -12,7 +12,7 @@
         <div class="fecha">
           <span><strong>Fecha</strong> {{ tarea.fecha }}</span>
         </div>
-        <ion-accordion-group>
+      <!--  <ion-accordion-group>
           <ion-accordion value="first">
             <div class="ion-padding" slot="content">
               {{ tarea.descripcion }}
@@ -23,7 +23,8 @@
            
           </ion-accordion>
         </ion-accordion-group>
-        
+        -->
+         <ion-button [routerLink]="['/vista-tarea', tarea.id]">Ver detalles</ion-button>
         
       </ion-card-content>
     </div>

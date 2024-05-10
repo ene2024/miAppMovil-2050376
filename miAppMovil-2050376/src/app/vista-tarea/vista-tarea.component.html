@@ -1,0 +1,33 @@
+<div class="container">
+  <ion-content>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> 
+          {{ tarea?.nombre }}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="imagen">
+          <img src="miAppMovil-2050376\unknown.png" alt="">
+        </div>
+        <h6 *ngIf="tarea?.fecha">Fecha: {{ tarea?.fecha }}</h6> <!-- Muestra la fecha si está presente en la tarea -->
+        <h6 *ngIf="tarea?.descripcion">Descripción: {{ tarea?.descripcion }}</h6> <!-- Muestra la descripción si está presente en la tarea -->
+        <br><br><br>
+        <div class="botones">
+          <ion-button fill="clear">
+            <ion-icon name="arrow-redo"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear">
+            <ion-icon name="download"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear">
+            <ion-icon name="mail"></ion-icon>
+          </ion-button>
+          <ion-button routerLink="/tareas">
+            <ion-icon name="close"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-card-content>    
+    </ion-card>
+  </ion-content>
+</div>

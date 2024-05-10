@@ -17,4 +17,7 @@ export class TareaService {
   agregarTarea(nuevaTarea: Tarea): void {
     this.tareas.push(nuevaTarea);
   }
+  getTareaById(id: number): Tarea | undefined {
+    return this.tareas.find(tarea => tarea.id === id);
+  }
 }
