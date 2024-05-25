@@ -118,12 +118,12 @@ ion-item.selected {
   --color: var(--ion-color-primary);
 }
 
-/* app.component.scss */
+
 .ion-searchbar{
   width: 10px;
 }
 .side-menu {
-  background-color: #ffffff; /* Color de fondo */
+  background-color: #ffffff; 
   width: 250px; /* Ancho del sidemenu */
 }
 
@@ -168,3 +168,4 @@ ion-item.selected {
 .logout-button {
   margin-top: auto; /* Mantiene el botón de cierre de sesión pegado al final del sidemenu */
 }
+

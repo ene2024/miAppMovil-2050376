@@ -2,21 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { Plugins } from '@capacitor/core';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
 import { FotoServiceService } from '../foto-service.service';
 import { Foto } from '../foto.model';
-
-
 
 @Component({
   selector: 'app-agregar-producto',
   templateUrl: './agregar-producto.component.html',
   styleUrls: ['./agregar-producto.component.scss'],
 })
-export class AgregarProductoComponent {
+export class AgregarProductoComponent implements OnInit {
   fotos: Foto[] = [];
   product = {
     title: '',
@@ -34,16 +28,16 @@ export class AgregarProductoComponent {
     private router: Router,
     public fotoService: FotoServiceService
   ) {}
-  ngOnInit() {
 
+  ngOnInit() {
     this.fotos = this.fotoService.fotos;
   }
-  tomarFoto(){
 
-    this.fotoService.addNewToGallery()
-
+  async tomarFoto() {
+    const capturedPhoto = await this.fotoService.addNewToGallery();
+    this.product.image = capturedPhoto.webViewPath ?? null;
+    this.photo = capturedPhoto.webViewPath ?? null;
   }
-  
 
   submitProduct() {
     this.afAuth.currentUser.then(user => {
@@ -56,10 +50,10 @@ export class AgregarProductoComponent {
         }).then(() => {
           this.router.navigate(['/inicio']);
         }).catch(error => {
-          console.error('Error adding product: ', error);
+          console.error('Error al agregar producto: ', error);
         });
       } else {
-        console.error('User not logged in');
+        console.error('Usuario no iniciado');
       }
     });
   }
