@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<br><br><br><br>
+
+<ion-content>
+  <form (ngSubmit)="submitProduct()">
+    <ion-item>
+      <ion-label position="floating" >Nombre del producto</ion-label>
+      <ion-input [(ngModel)]="product.title" name="name" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea [(ngModel)]="product.description" name="description" required></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input [(ngModel)]="product.price" name="price" type="number" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Categoría</ion-label>
+      <ion-select [(ngModel)]="product.category" name="category" required>
+        <ion-select-option value="Ropa">Ropa</ion-select-option>
+        <ion-select-option value="Electronicos">Electrónicos</ion-select-option>
+        <ion-select-option value="Hogar">Hogar</ion-select-option>
+        <ion-select-option value="Libros">Libros</ion-select-option>
+        <ion-select-option value="Juguetes">Juguetes</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"></ion-label>
+      <ion-button (click)="tomarFoto()">Tomar Foto</ion-button>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3" *ngFor="let foto of fotos; index as i">
+          <img [src]="foto.webViewPath" alt="">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    <ion-button expand="full" type="submit">Agregar Producto</ion-button>
+  </form>
+</ion-content>

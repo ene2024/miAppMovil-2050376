@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let producto of productos">
+        <ion-card (click)="verProducto(producto)">
+          <img [src]="producto.image" alt="{{ producto.title }}" />
+          <ion-card-header>
+            <ion-card-title>{{ producto.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Precio: {{ producto.price | currency }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

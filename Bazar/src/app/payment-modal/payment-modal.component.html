@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Seleccionar Tarjeta</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-radio-group [(ngModel)]="selectedCard">
+      <ion-item *ngFor="let card of cards">
+        <ion-label>{{ card.cardNumber }}</ion-label>
+        <ion-radio slot="start" [value]="card"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-button expand="block" (click)="addCard()">Agregar Tarjeta</ion-button>
+  <ion-button expand="block" [disabled]="!selectedCard" (click)="pay()">Pagar</ion-button>
+</ion-content>
